@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body onload="loadUsers()">
+    <div class="login-container">
+        <h2>Увійти</h2>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Ім'я користувача">
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Пароль">
+        </div>
+
+        <div class="captcha-container">
+            <canvas id="captchaCanvas" width="200" height="80"></canvas>
+            <input type="text" id="captchaInput" placeholder="Введіть CAPTCHA">
+        </div>
+
+        <button onclick="login()">Увійти</button>
+        <p id="message"></p>
+    </div>
+    <div id="admin-menu" class="hidden">
+        <h3 id="current-user">Ви увійшли як: Admin</h3>
+        <button onclick="changeAdminPassword()">Змінити пароль адміністратора</button>
+        <button onclick="viewUsers()">Перегляд користувачів</button>
+        <button onclick="addUser()">Додати користувача</button>
+        <button onclick="blockUser()">Заблокувати користувача</button>
+        <button onclick="togglePasswordRestrictions()">Змінити обмеження паролів</button>
+        <button onclick="showAboutProgram()">Про програму</button>
+        <button onclick="logout()">Вихід</button>
+    </div>
+    <div id="user-menu" class="hidden">
+        <h3 id="current-user">Ви увійшли як: <span id="user-name"></span></h3>
+        <button onclick="changeUserPassword()">Змінити пароль користувача</button>
+        <button onclick="logout()">Вихід</button>
+    </div>  
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script src="admin.js"></script>
+    <script src="user.js"></script>
+    <script src="captcha.js"></script>
+</body>
+</html>
